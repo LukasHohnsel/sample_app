@@ -17,6 +17,7 @@ end
 
 group :development do
   gem 'annotate', '2.5.0'
+  gem 'capybara', '1.1.2'
 end
 
 # Gems used only for assets and not required
