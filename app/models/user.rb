@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include Gravtastic
+  gravtastic
   attr_accessible :name, :email, :password, :password_confirmation
   has_secure_password
   has_many :reverse_relationships, foreign_key: "followed_id",
