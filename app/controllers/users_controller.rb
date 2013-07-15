@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :correct_user,   only: [:edit, :update]
   before_filter :admin_user,     only: :destroy
   
-    def show
+  def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
   end
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   end
 
   def create
-     @user = User.new(params[:user])
+    @user = User.new(params[:user])
     if @user.save
       sign_in @user
       flash[:success] = "Welcome to the Sample App!"
@@ -49,7 +49,8 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
-   def update
+
+  def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
       flash[:success] = "Profile updated"
@@ -67,19 +68,19 @@ class UsersController < ApplicationController
 
   private
 
-     def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to signin_url, notice: "Please sign in."
-      end
+  def signed_in_user
+    unless signed_in?
+      store_location
+      redirect_to signin_url, notice: "Please sign in."
     end
+  end
 
-    def admin_user
+  def admin_user
       redirect_to(root_path) unless current_user.admin?
-    end
+  end
 
-    def correct_user
+  def correct_user
       @user = User.find(params[:id])
       redirect_to(root_path) unless current_user?(@user)
-    end
+  end
 end
