@@ -28,6 +28,7 @@ User.create(name: 'Tim Schindler', email: 'tim.schindler@adcloud.com', password:
 User.create(name: 'Waldemar Schwan', email: 'waldemar.schwan@adcloud.com', password: 'foobar16', password_confirmation:'foobar16')
 User.create(name: 'Lars Wolff', email: 'lars.wolff@adcloud.com', password: 'foobar17', password_confirmation:'foobar17')
 User.create(name: 'Stephan Zeissler', email: 'stephan.zeissler@adcloud.com', password: 'foobar18', password_confirmation:'foobar18')
+User.create(name: 'Anna Löw', email: 'anna.loew@adcloud.com', password: 'foobar19', password_confirmation:'foobar19')
 
 u = User.where(:email => "lukas.hohnsel@hotmail.de").first
 u.toggle!(:admin)
